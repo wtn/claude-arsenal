@@ -1,0 +1,15 @@
+/.bundle/
+/.yardoc
+/_yardoc/
+/coverage/
+/doc/
+/pkg/
+/spec/reports/
+/tmp/
+/Gemfile.lock
+
+# Added by claude-arsenal
+/dev/active/
+/.context/
+/.claude/tmp/
+/.claude/skills/gems/
