@@ -1,0 +1,139 @@
+# <%= @name.split('-').map(&:capitalize).join(' ') %> - Tasks
+
+Last Updated: <%= @timestamp %>
+Progress: [----------] 0%
+
+## Quick Stats
+- **Total Tasks**: 0
+- **Completed**: 0
+- **In Progress**: 0
+- **Blocked**: 0
+
+---
+
+## >> Current Focus
+
+### In Progress
+- [ ] [>>] [Task currently being worked on]
+
+### Up Next
+- [ ] [=>] [Next immediate task]
+
+---
+
+## Phase 1: Research & Design
+
+- [ ] Analyze existing codebase for similar patterns
+  - [ ] Find comparable implementations
+  - [ ] Document patterns to follow
+- [ ] Identify all affected components
+  - [ ] List files that need modification
+  - [ ] List new files to create
+- [ ] Design data structures
+- [ ] Design interfaces/APIs
+- [ ] Document architectural decisions in context.md
+
+## Phase 2: Core Implementation
+
+- [ ] Create main implementation file
+- [ ] Implement core business logic
+  - [ ] [Specific feature 1]
+  - [ ] [Specific feature 2]
+- [ ] Add input validation
+- [ ] Add error handling
+  - [ ] Define custom error types
+  - [ ] Add error recovery logic
+- [ ] Add logging/monitoring
+- [ ] Write unit tests
+  - [ ] Happy path tests
+  - [ ] Error case tests
+  - [ ] Edge case tests
+
+## Phase 3: Integration
+
+- [ ] Connect to existing [system/component]
+- [ ] Update API endpoints
+  - [ ] Add new routes
+  - [ ] Update existing routes
+- [ ] Database changes (if needed)
+  - [ ] Create migration
+  - [ ] Update models
+- [ ] Update frontend (if needed)
+  - [ ] Add UI components
+  - [ ] Connect to backend
+- [ ] Write integration tests
+
+## Phase 4: Polish & Documentation
+
+- [ ] Code review checklist
+  - [ ] Remove debug code
+  - [ ] Check for code smells
+  - [ ] Ensure consistent naming
+  - [ ] Verify error handling
+- [ ] Performance optimization
+  - [ ] Profile critical paths
+  - [ ] Optimize database queries
+  - [ ] Add caching if needed
+- [ ] Update documentation
+  - [ ] API documentation
+  - [ ] Code comments
+  - [ ] README updates
+- [ ] Final testing
+  - [ ] Manual testing checklist
+  - [ ] Run full test suite
+  - [ ] Test in staging environment
+
+## [!] Bug Fixes (discovered during implementation)
+
+- [ ] [!] [Bug description and fix needed]
+
+## [+] Additional Tasks (discovered during implementation)
+
+- [ ] [Task discovered while working]
+
+---
+
+## [x] Completed Tasks
+
+<details>
+<summary>Click to see completed tasks</summary>
+
+### Phase 1 Completed
+- [x] ~~[Completed task]~~ [x] <%= Time.now.strftime('%Y-%m-%d') %>
+
+### Phase 2 Completed
+- [x] ~~[Completed task]~~ [x] <%= Time.now.strftime('%Y-%m-%d') %>
+
+### Phase 3 Completed
+- [x] ~~[Completed task]~~ [x] <%= Time.now.strftime('%Y-%m-%d') %>
+
+### Phase 4 Completed
+- [x] ~~[Completed task]~~ [x] <%= Time.now.strftime('%Y-%m-%d') %>
+
+</details>
+
+---
+
+## [~] Blocked/Deferred
+
+- [ ] [X] [Task on hold] - **Blocked by**: [Reason]
+- [ ] [~] [Deferred task] - **Deferred until**: [When/Why]
+
+---
+
+## Notes
+
+### Task Markings
+- [>>] = In Progress
+- [=>] = Up Next
+- [x] = Complete
+- [!] = Bug Fix
+- [X] = Blocked
+- [~] = Deferred
+
+### Update Protocol
+1. Mark tasks as [>>] when starting
+2. Move completed tasks to Completed section
+3. Update progress bar
+4. Update Last Updated timestamp
+5. Add discovered tasks to Additional Tasks section

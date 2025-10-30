@@ -1,0 +1,151 @@
+{
+  "_meta": {
+    "version": "1.0",
+    "description": "Skill activation rules for Claude Code"
+  },
+  "documentation-writing": {
+    "type": "guidelines",
+    "enforcement": "suggest",
+    "priority": "medium",
+    "promptTriggers": {
+      "keywords": [
+        "documentation",
+        "README",
+        "markdown",
+        "docs",
+        "write guide",
+        "skill documentation"
+      ],
+      "intentPatterns": [
+        "(write|create|update).*?(documentation|README|guide|docs)",
+        "(document|explain).*?(feature|skill|hook)",
+        "progressive disclosure"
+      ]
+    },
+    "fileTriggers": {
+      "pathPatterns": [
+        "README.md",
+        "context/**/*.md",
+        ".claude/skills/**/SKILL.md",
+        ".claude/skills/**/resources/*.md",
+        "**/*.md"
+      ],
+      "contentPatterns": [
+        "^# .*Skill$",
+        "## Purpose",
+        "## Core Principles",
+        "## Resources"
+      ]
+    },
+    "_linked": true,
+    "_source": "claude-arsenal"
+  },
+  "generator-patterns": {
+    "type": "domain",
+    "enforcement": "suggest",
+    "priority": "high",
+    "promptTriggers": {
+      "keywords": [
+        "generator",
+        "template",
+        "ERB",
+        "generate",
+        "scaffold",
+        "create file"
+      ],
+      "intentPatterns": [
+        "(create|build|implement).*?(generator|template)",
+        "(render|generate).*?(file|template)",
+        "ERB.*?(template|rendering)"
+      ]
+    },
+    "fileTriggers": {
+      "pathPatterns": [
+        "lib/claude/arsenal/generators/**/*.rb",
+        "lib/claude/arsenal/templates/**/*.erb",
+        "lib/**/generators/**/*.rb",
+        "lib/**/templates/**/*.erb"
+      ],
+      "contentPatterns": [
+        "class.*Generator",
+        "ERB\\.new",
+        "template\\.result",
+        "def generate"
+      ]
+    },
+    "_linked": true,
+    "_source": "claude-arsenal"
+  },
+  "ruby-gem-development": {
+    "type": "domain",
+    "enforcement": "suggest",
+    "priority": "high",
+    "promptTriggers": {
+      "keywords": [
+        "gem",
+        "gemspec",
+        "bundler",
+        "rake",
+        "bake",
+        "ruby gem",
+        "dependency"
+      ],
+      "intentPatterns": [
+        "(create|update|modify|add).*?(gem|gemspec|dependency)",
+        "(build|release|publish).*?gem",
+        "(module|class).*?(Claude|Arsenal)"
+      ]
+    },
+    "fileTriggers": {
+      "pathPatterns": [
+        "*.gemspec",
+        "Gemfile",
+        "Rakefile",
+        "lib/**/*.rb",
+        "bake/**/*.rb"
+      ],
+      "contentPatterns": [
+        "Gem::Specification",
+        "spec\\.add_dependency",
+        "module Claude",
+        "module Arsenal"
+      ]
+    },
+    "_linked": true,
+    "_source": "claude-arsenal"
+  },
+  "test-coverage": {
+    "type": "guardrail",
+    "enforcement": "require",
+    "priority": "critical",
+    "promptTriggers": {
+      "keywords": [
+        "test",
+        "testing",
+        "minitest",
+        "spec",
+        "coverage",
+        "test case"
+      ],
+      "intentPatterns": [
+        "(write|create|add|update).*?test",
+        "(add|implement).*?(feature|functionality|method)",
+        "(modify|change|update).*?(class|module|generator)"
+      ]
+    },
+    "fileTriggers": {
+      "pathPatterns": [
+        "lib/**/*.rb",
+        "test/**/*_test.rb"
+      ],
+      "contentPatterns": [
+        "class.*< Minitest::Test",
+        "def test_",
+        "assert",
+        "refute"
+      ]
+    },
+    "_linked": true,
+    "_source": "claude-arsenal"
+  }
+}

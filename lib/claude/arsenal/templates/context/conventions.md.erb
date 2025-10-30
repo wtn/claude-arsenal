@@ -1,0 +1,74 @@
+# Conventions
+
+<!--
+Only document things that DIFFER from standard conventions.
+
+If you follow standards, this file should be mostly empty!
+
+See `context/guides/writing-context.md` for guidance.
+-->
+
+## Project-Specific Conventions
+
+### Naming Patterns
+
+<!-- *Only* include if you have project-specific naming beyond standard conventions -->
+
+[Example: "All API client classes must end with 'Client' (e.g., AccountClient, OrderClient)"]
+
+[Example: "Database models use singular nouns (User, not Users) to match ActiveRecord"]
+
+### Code Organization
+
+<!-- *Only* if you have unusual organization -->
+
+[Example: "Controllers go in app/http/ not app/controllers/ because we separate HTTP from other interfaces"]
+
+[Example: "All external API integrations must be in lib/integrations/ with adapters"]
+
+## Project-Specific Restrictions
+
+<!-- Document things you DON'T want Claude to do -->
+
+**Don't use**: [Pattern/library/approach]
+
+**Why**: [Reason for avoiding it]
+
+**Use instead**: [Preferred approach]
+
+---
+
+**Example:**
+- **Don't use**: Direct Prisma queries in controllers
+- **Why**: We had data consistency issues in production
+- **Use instead**: Repository pattern in lib/repositories/
+
+## Domain-Specific Terminology
+
+<!-- Map your project's terms to standard concepts -->
+
+**[Your Term]** = [Standard equivalent]
+- [When to use it, any nuances]
+
+---
+
+**Example:**
+- **"Massive account"** = Account with >1000 users (not related to massive.com)
+- **"Workflow state"** = State machine node (we use 'state' not 'node' in code)
+
+## Testing Conventions
+
+<!-- *Only* if you have unusual testing patterns -->
+
+[Example: "All controller tests must use the test_auth_helper for authenticated requests"]
+
+[Example: "Integration tests go in test/integration/, not test/ (differs from Minitest default)"]
+
+## Documentation Conventions
+
+<!-- *Only* if you have specific requirements -->
+
+[Example: "All public API methods require YARD docs with @example blocks"]
+
+[Example: "RBS signatures required for all public modules in lib/"]
+

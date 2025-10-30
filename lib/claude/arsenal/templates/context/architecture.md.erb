@@ -1,0 +1,134 @@
+# Architecture
+
+<!--
+Document WHY your system is designed this way, not WHAT it does (Claude can read code).
+
+Focus on: design decisions, trade-offs, non-obvious gotchas.
+
+See `context/guides/writing-context.md` for guidance.
+-->
+
+## What <%= project_name %> Does
+
+[1-2 sentences: Core purpose and how it fits into the larger system]
+
+## Key Design Decisions
+
+<!-- This is the *most valuable* section - focus your energy here -->
+
+### [Decision 1: Choose a meaningful name]
+
+**Context**: [What problem or constraint led to this decision?]
+
+**Decision**: [What did you choose to do?]
+
+**Rationale**: [Why this approach? What alternatives were considered?]
+
+**Trade-offs**: [What did you gain? What did you give up?]
+
+### [Decision 2]
+
+**Context**: [What problem needed solving?]
+
+**Decision**: [Your approach]
+
+**Rationale**: [Why this made sense]
+
+**Important Gotchas**: [Non-obvious implications or limitations]
+
+## Components
+
+<!-- Only document components if there's something *non-obvious* about them -->
+
+### [Component Name]
+
+**Purpose**: [What it does]
+
+**Why it exists separately**: [Why isn't this part of another component?]
+
+**Integration points**: [How it connects to other parts - be specific]
+
+**Non-obvious details**: [Things that aren't clear from reading the code]
+
+## Data Flow
+
+<!-- Use this to explain non-obvious flows, especially cross-system integrations -->
+
+```
+[Show the flow with ASCII art or bullet points]
+
+User Request
+  ↓
+[Component A] - [What happens here that's not obvious]
+  ↓ [What gets passed, any transformations]
+[Component B] - [Key processing step]
+  ↓
+[External System] - [Integration point, gotchas]
+  ↓
+Result
+```
+
+**Important notes about this flow:**
+- [Gotcha 1: e.g., "This step is async and can timeout"]
+- [Gotcha 2: e.g., "Credentials must be refreshed every 24hrs"]
+
+## Integration Points
+
+<!-- Where this system connects to others - be specific about gotchas -->
+
+### [External System 1]
+
+**What we use it for**: [Purpose]
+
+**Connection method**: [HTTP API, database connection, message queue, etc.]
+
+**Authentication**: [How credentials work, refresh logic, gotchas]
+
+**Gotchas**: [Rate limits, data format quirks, timeout behavior, etc.]
+
+### [External System 2]
+
+[Continue for each integration...]
+
+## Domain-Specific Patterns
+
+<!-- Only document patterns that are *specific* to your domain -->
+<!-- Generic patterns like "Controllers call Services" belong in .claude/skills/ -->
+
+### [Pattern Name]
+
+**When to use**: [Specific circumstances in THIS project]
+
+**Example from our codebase**:
+```ruby
+[Real code from your project showing the pattern]
+```
+
+**Why we do it this way**: [Project-specific rationale]
+
+## Gotchas & Non-Obvious Behavior
+
+<!-- This section is *gold* - document things that surprised you -->
+
+### [Gotcha 1]
+
+[Example: "rate_limit returns nil for 'Unlimited', not {requests: 99}"]
+
+**Why it matters**: [Impact on how you use the API]
+
+### [Gotcha 2]
+
+[Continue for each gotcha...]
+
+## Performance Considerations
+
+<!-- Only if there are non-obvious performance characteristics -->
+
+[Example: "Historical data queries over 2 years hit a rate limit even with 'Unlimited' plan"]
+
+## References
+
+- Related skills: `.claude/skills/[relevant-skill]/`
+- External docs: [URLs to external documentation]
+- Related context: `context/conventions.md` for code standards
+

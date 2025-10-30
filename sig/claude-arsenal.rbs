@@ -1,0 +1,145 @@
+module Claude
+  module Arsenal
+    VERSION: String
+
+    class Error < StandardError
+    end
+
+    module Generators
+      class Hook
+        HOOK_TYPES: Array[Symbol]
+
+        attr_reader type: Symbol
+        attr_reader name: String
+        attr_reader output_dir: String
+
+        def initialize: (type: Symbol | String, name: String, ?output_dir: String) -> void
+        def generate: () -> String
+
+        private
+
+        def validate_type!: () -> void
+        def find_template: () -> String
+        def template_dir: () -> String
+        def render_template: (String) -> String
+      end
+
+      class Skill
+        SKILL_TYPES: Array[Symbol]
+        PRIORITIES: Array[Symbol]
+
+        attr_reader name: String
+        attr_reader type: Symbol
+        attr_reader priority: Symbol
+        attr_reader output_dir: String
+
+        def initialize: (name: String, type: Symbol | String, ?priority: Symbol | String, ?output_dir: String) -> void
+        def generate: () -> String
+
+        private
+
+        def validate_parameters!: () -> void
+        def generate_skill_file: (String) -> String
+        def update_skill_rules: () -> void
+        def template_dir: () -> String
+        def render_template: (String) -> String
+      end
+
+      class Subagent
+        CATEGORIES: Array[Symbol]
+
+        attr_reader name: String
+        attr_reader category: Symbol
+        attr_reader output_dir: String
+
+        def initialize: (name: String, category: Symbol | String, ?output_dir: String) -> void
+        def generate: () -> String
+
+        private
+
+        def validate_category!: () -> void
+        def find_template: () -> String
+        def template_dir: () -> String
+        def render_template: (String) -> String
+      end
+
+      class SlashCommand
+        attr_reader name: String
+        attr_reader description: String?
+        attr_reader output_dir: String
+
+        def initialize: (name: String, ?description: String?, ?output_dir: String) -> void
+        def generate: () -> String
+
+        private
+
+        def find_template: () -> String
+        def template_dir: () -> String
+        def render_template: (String) -> String
+      end
+    end
+
+    module Config
+      class SkillRules
+        DEFAULT_CONFIG_PATH: String
+
+        attr_reader config_path: String
+        attr_reader rules: Hash[String, untyped]
+
+        def initialize: (?config_path: String) -> void
+        def add_skill: (String, Hash[Symbol | String, untyped]) -> Hash[String, untyped]
+        def remove_skill: (String) -> Hash[String, untyped]?
+        def get_skill: (String) -> Hash[String, untyped]?
+        def save: () -> void
+        def reload: () -> Hash[String, untyped]
+
+        private
+
+        def load_rules: () -> Hash[String, untyped]
+        def normalize_config: (Hash[Symbol | String, untyped]) -> Hash[String, untyped]
+        def normalize_triggers: (Hash[Symbol | String, untyped]?) -> Hash[String, Array[String]]?
+      end
+
+      class Validator
+        class ValidationResult
+          attr_reader valid?: bool
+          attr_reader errors: Array[String]
+          attr_reader warnings: Array[String]
+
+          def initialize: (?valid: bool, ?errors: Array[String], ?warnings: Array[String]) -> void
+        end
+
+        attr_reader base_dir: String
+
+        def initialize: (?base_dir: String) -> void
+        def validate_all: () -> ValidationResult
+        def validate_skill_rules: () -> Array[String]
+        def validate_skills: () -> Array[String]
+        def validate_hooks: () -> Array[String]
+        def validate_agents: () -> Array[String]
+        def validate_commands: () -> Array[String]
+
+        private
+
+        def valid_enforcement?: (String?) -> bool
+        def valid_priority?: (String?) -> bool
+      end
+    end
+
+    module CLI
+      class Setup
+        attr_reader base_dir: String
+
+        def initialize: (?base_dir: String) -> void
+        def run: () -> void
+
+        private
+
+        def create_directory_structure: () -> void
+        def create_initial_config: () -> void
+        def create_gitignore: () -> void
+        def create_dev_directories: () -> void
+      end
+    end
+  end
+end

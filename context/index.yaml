@@ -1,0 +1,122 @@
+# Claude Arsenal Documentation Index
+# For use with agent-context gem
+
+name: claude_arsenal
+version: 0.1.0
+description: Claude Code configuration generators and workflow tools
+
+files:
+  - path: getting-started.md
+    title: Getting Started
+    description: Quick start guide and installation instructions
+    priority: high
+
+  - path: dev-docs.md
+    title: Dev Docs Workflow
+    description: Prevent context loss with persistent documentation across sessions
+    priority: high
+
+  - path: configuration.md
+    title: Configuration
+    description: Understanding skill-rules.json and configuration options
+    priority: high
+
+  - path: hooks.md
+    title: Hooks
+    description: Hook system overview and templates
+    priority: medium
+
+  - path: skills.md
+    title: Skills
+    description: Creating and organizing skills with progressive disclosure
+    priority: medium
+
+  - path: agents.md
+    title: Subagents
+    description: Specialized subagent configurations
+    priority: medium
+
+  - path: commands.md
+    title: Slash Commands
+    description: Custom slash command creation
+    priority: medium
+
+  - path: examples.md
+    title: Examples
+    description: Real-world usage patterns and complete setups
+    priority: low
+
+skills:
+  - path: skills/documentation-writing/SKILL.md
+    name: documentation-writing
+    title: Documentation Writing
+    description: Guidelines for clear, maintainable documentation with progressive disclosure
+    priority: high
+
+hooks:
+  - path: hooks/README.md
+    title: Hook Reference Implementations
+    description: TypeScript hooks for Claude Code automation
+    priority: high
+
+  - path: hooks/skill-activator.ts
+    title: Skill Activator Hook
+    description: Auto-activates skills based on keywords and file context
+    priority: high
+
+  - path: hooks/build-checker.ts
+    title: Build Checker Hook
+    description: Runs builds when conversation ends, reports errors
+    priority: medium
+
+  - path: hooks/file-edit-tracker.ts
+    title: File Edit Tracker Hook
+    description: Tracks file modifications across conversation
+    priority: medium
+
+agents:
+  - path: agents/README.md
+    title: Agent Reference Configurations
+    description: Specialized sub-agent configurations for various tasks
+    priority: medium
+
+  - path: agents/quality_control/code-architecture-reviewer.md
+    title: Code Architecture Reviewer
+    description: Reviews code for architectural quality and best practices
+    priority: medium
+
+  - path: agents/planning/strategic-plan-architect.md
+    title: Strategic Plan Architect
+    description: Creates comprehensive implementation plans
+    priority: medium
+
+commands:
+  - path: commands/README.md
+    title: Slash Command References
+    description: Slash command implementations for common workflows
+    priority: medium
+
+  - path: commands/dev-docs.md
+    title: Dev Docs Command
+    description: Create comprehensive development documentation
+    priority: medium
+
+  - path: commands/code-review.md
+    title: Code Review Command
+    description: Run architectural code review
+    priority: low
+
+  - path: commands/build-and-fix.md
+    title: Build and Fix Command
+    description: Run builds and fix errors
+    priority: low
+
+tags:
+  - claude-code
+  - productivity
+  - automation
+  - workflow-tools
+
+author: William T. Nelson
+repository: https://github.com/wtn/claude_arsenal
+license: MIT

@@ -1,0 +1,104 @@
+# Getting Started with <%= project_name %>
+
+<!--
+**Early development?** Leave this mostly empty. Claude will use `.context/` from your gems.
+
+**Patterns stabilized?** Fill in non-obvious gotchas and project-specific information.
+
+See `context/guides/writing-context.md` for the full system (skills+hooks+dev-docs).
+-->
+
+## What is <%= project_name %>?
+
+[1-2 sentences: What problem does this solve? Who uses it?]
+
+## Setting Up for Success
+
+**Priority 1: Skills + Hooks** - This is where the biggest gains come from. See `context/guides/writing-context.md` for the full system.
+
+1. Create domain-specific skills in `.claude/skills/local/`
+2. Set up `skill-rules.json` with keywords and file patterns
+3. Copy skill-activator hook from `.context/claude-arsenal/hooks/`
+4. Result: Skills that actually auto-activate, patterns stay consistent
+
+**Priority 2: Dev Docs Workflow** - For large features, prevents context loss.
+
+1. Copy `/dev-docs` and `/create-dev-docs` commands
+2. For each large task: plan → create dev docs → implement → update before compaction
+3. Result: Claude never loses the plot, even through multiple compactions
+
+**Priority 3: Fill In This Context** - Only after patterns stabilize.
+
+## Key Concepts
+
+**[Domain Term 1]**: [What it means in THIS project's context]
+
+**[Domain Term 2]**: [What it means in THIS project's context]
+
+## Setup Requirements
+
+### Credentials & Authentication
+
+<!-- Only document if YOUR project needs special auth -->
+
+[If this project requires API keys, tokens, or special authentication, explain how to obtain them and where they go]
+
+### External Dependencies
+
+<!-- Only document if YOUR project integrates with external services -->
+
+[If this integrates with external APIs, databases, or services, document the connection points]
+
+## Project-Specific Setup Gotchas
+
+<!-- This is the *most valuable* section - document the non-obvious stuff -->
+
+### [Gotcha 1]
+
+**Issue**: [What goes wrong if you don't know this]
+
+**Why**: [The non-obvious reason]
+
+**Solution**: [How to handle it]
+
+### [Gotcha 2]
+
+[Continue for each non-obvious setup issue...]
+
+## Quick Commands
+
+<!-- *Only* if your project has non-standard or custom commands -->
+
+```bash
+# Custom command specific to this project
+[command]  # What it does and why you'd use it
+
+# Another project-specific command
+[command]  # What it does and why you'd use it
+```
+
+## Development Modes
+
+<!-- *Only* if your project has special modes (dev, staging, prod with different behaviors) -->
+
+[Explain any project-specific development modes or environment-specific behaviors]
+
+## Integration Points
+
+<!-- Where this project connects to other systems -->
+
+**[System 1]**: [How we integrate, what endpoints, any gotchas]
+
+**[System 2]**: [How we integrate, what endpoints, any gotchas]
+
+## Known Issues & Workarounds
+
+<!-- Document the annoying bugs that waste time -->
+
+### [Issue Name]
+
+**Symptom**: [What you see]
+
+**Cause**: [Why it happens - if known]
+
+**Workaround**: [How to deal with it]
